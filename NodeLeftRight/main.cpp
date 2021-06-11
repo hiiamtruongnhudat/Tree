@@ -12,6 +12,15 @@ void initializeTree(TREE &tree)
 {
     tree = NULL;
 }
+void deleteTree(TREE &tree)
+{
+    if (tree != NULL)
+    {
+        deleteTree(tree->pLeft);
+        deleteTree(tree->pRight);
+        delete tree;
+    }
+}
 void addNode(TREE &tree, int x)
 {
     if (tree == NULL)
