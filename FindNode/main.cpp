@@ -39,6 +39,18 @@ void outputNLR(TREE tree)
         outputNLR(tree->pRight);
     }
 }
+NODE *findNode(TREE tree, int x)
+{
+    if (tree != NULL)
+    {
+        if (tree->data == x)
+            return tree;
+        if ( x < tree->data)
+            return findNode(tree->pLeft,x);
+        return findNode(tree->pRight,x);
+    }
+    return NULL;
+}
 int main()
 {   
     TREE tree;
@@ -50,5 +62,11 @@ int main()
     addNode(tree,6);
     addNode(tree,7);
     outputNLR(tree);
+    if(findNode(tree,2) != NULL)
+        cout << "\nTon Tai";
+    else
+    {
+        cout << "\nNone";
+    }
     return 0;
 }
