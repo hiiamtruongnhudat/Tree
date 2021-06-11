@@ -4,8 +4,8 @@ using namespace std;
 typedef struct node
 {
     int data;
-    struct node* pLeft;
-    struct node* pRight;
+    node* pLeft;
+    node* pRight;
 } NODE;
 typedef NODE* TREE;
 void initializeTree(TREE &tree)
